@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 class Tree {
-private:
+ private:
     struct Node {
         char value;
         std::vector<Node*> brat;
@@ -14,7 +14,7 @@ private:
         if (!circ.size())
             return;
         if (root->value != '*') {
-            for (auto u = circ.begin(); u != circ.end(); u++) 
+            for (auto u = circ.begin(); u != circ.end(); u++)
             if (*u == root->value) {
                 circ.erase(u);
                 break;
@@ -39,7 +39,7 @@ private:
             mus(root->brat[wh], str);
     }
 
-public:
+ public:
     std::string operator[](int i) const {
         if (i >= gree.size())
             return "";
