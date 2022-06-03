@@ -15,7 +15,7 @@ private:
             return;
         if (root->value != '*') {
             for (auto u = circ.begin(); u != circ.end(); u++) {
-            if (*u == root->value) 
+            if (*u == root->value) {
                 circ.erase(u);
                 break;
             }
