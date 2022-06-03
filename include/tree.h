@@ -14,7 +14,7 @@ private:
         if (!circ.size())
             return;
         if (root->value != '*') {
-            for (auto u = circ.begin(); u != circ.end(); u++) {
+            for (auto u = circ.begin(); u != circ.end(); u++) 
             if (*u == root->value) {
                 circ.erase(u);
                 break;
@@ -35,8 +35,8 @@ private:
         }
         if (root->value != '*')
             str += root->value;
-        for (size_t q = 0; q < root->brat.size(); q++)
-            mus(root->brat[q], str);
+        for (size_t wh = 0; wh < root->brat.size(); wh++)
+            mus(root->brat[wh], str);
     }
 
 public:
