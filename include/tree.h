@@ -9,26 +9,21 @@ private:
     };
     Node* root;
     void Btr(Node* root, std::vector<char> circ) {
-        if (!circ.size()) {
+        if (!circ.size())
             return;
-        }
         if (root->value != '*') {
             for (auto u = circ.begin(); u != circ.end(); u++) {
-                if (*u == root->value) {
-                    circ.erase(u);
-                    break;
-                }
+            if (*u == root->value) 
+                circ.erase(u);
+                break;
             }
         }
-        for (size_t wh = 0; wh < circ.size(); wh++) {
+        for (size_t wh = 0; wh < circ.size(); wh++)
             root->brat.push_back(new Node());
-        }
-        for (size_t wh = 0; wh < root->brat.size(); wh++) {
+        for (size_t wh = 0; wh < root->brat.size(); wh++)
             root->brat[wh]->value = circ[wh];
-        }
-        for (size_t wh = 0; wh < root->brat.size(); wh++) {
+        for (size_t wh = 0; wh < root->brat.size(); wh++)
             Btr(root->brat[wh], circ);
-        }
     }
     std::vector<std::string> gree;
     void mus(Node* root, std::string str = "") {
@@ -36,12 +31,10 @@ private:
             str += root->value;
             gree.push_back(str);
         }
-        if (root->value != '*') {
+        if (root->value != '*')
             str += root->value;
-        }
-        for (size_t q = 0; q < root->brat.size(); q++) {
+        for (size_t q = 0; q < root->brat.size(); q++)
             mus(root->brat[q], str);
-        }
     }
 
 public:
